@@ -77,3 +77,24 @@
 	@import 'layout/wrapper';
 	@import 'layout/menu';
 	@import 'layout/login';
+	@import 'layout/register';
+
+	//SpinKit
+
+	@import
+  "libs/spinners/1-rotating-plane",
+  "libs/spinners/2-double-bounce",
+  "libs/spinners/3-wave",
+  "libs/spinners/4-wandering-cubes",
+  "libs/spinners/5-pulse",
+  "libs/spinners/6-chasing-dots",
+  "libs/spinners/7-three-bounce",
+  "libs/spinners/8-circle",
+  "libs/spinners/9-cube-grid",
+  "libs/spinners/10-fading-circle",
+  "libs/spinners/11-folding-cube";
+  @import 'libs/variables';
+
+*:before, *:after {
+	  mix-blend-mode: hard-light;
+  }

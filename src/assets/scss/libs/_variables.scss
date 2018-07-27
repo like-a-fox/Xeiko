@@ -1,0 +1,11 @@
+$spinkit-spinner-margin: 40px auto !default;
+$spinkit-size: 40px !default;
+$spinkit-spinner-color: rgba(119, 154, 177, 0.397) !default;
+
+.spinner {
+    visibility: hidden;
+}
+
+.body.loading-spinner .spinner {
+    visibility: visible;
+}

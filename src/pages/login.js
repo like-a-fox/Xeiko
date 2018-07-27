@@ -35,7 +35,7 @@ const updateByPropertyName = (propertyName, value) => () => ({
       auth.doSignInWithEmailAndPassword(email, password)
         .then(() => {
           this.setState(() => ({ ...INITIAL_STATE }));
-          history.push(routes.HOME);
+          history.push('/profile');
         })
         .catch(error => {
           this.setState(updateByPropertyName('error', error));
@@ -63,7 +63,8 @@ const updateByPropertyName = (propertyName, value) => () => ({
        
     </Helmet>
     <Banner />
-<div id="main">
+<div id="filter"></div>
+<div id="main" className="login-parent">
 <section id="login">
 <div className="inner login-block">
 

@@ -10,7 +10,7 @@
 }
 
 
-#login {
+#register {
     @include vendor('transition', (
         'transform #{_duration(menu)} ease',
         'opacity #{_duration(menu)} ease',
@@ -35,7 +35,7 @@
 
 
 
-    .inner.login-block {
+    .inner{
         @include vendor('transition', (
             'transform #{_duration(menu)} ease-out',
             'opacity #{_duration(menu)} ease',
@@ -57,7 +57,7 @@
         padding-right: 1em;
         padding-bottom: .001em;
 
-        .login-title {
+        .register-title {
             width: 100%;
             color: rgba(0,0,0,1);
             line-height: 2.6em;
@@ -80,7 +80,7 @@
 
            
         }
-        & [type="text"], [type="password"] {
+        & [type="text"], [type="password"], [type="email"] {
             background: transparentize(_palette(accent1), .4);
             color: _palette(accent5);
             box-shadow: inset 0 0 0 2px rgba(0,0,0,1);
@@ -205,12 +205,12 @@ body.is-ie {
         background: transparentize(_palette(bg-alt), 0.025);
     }
 }
-.login-is-visible {
+.register-is-visible {
     #wrapper {
         @include vendor('filter', 'blur(1em)');
     }
 
-    #login {
+    #register {
         @include vendor('pointer-events', 'auto');
         opacity: 1;
         visibility: visible;

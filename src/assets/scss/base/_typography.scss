@@ -7,7 +7,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: _palette(fg);
+		color: _palette(accent1);
 		font-family: _font(family);
 		font-size: 17pt;
 		font-weight: _font(weight);
@@ -24,6 +24,10 @@
 
 		@include breakpoint(xxsmall) {
 			font-size: 11pt;
+		}
+		&:after {
+			color: rgba(200,200,200,.8);
+			mix-blend-mode: exclusion;
 		}
 	}
 
@@ -57,6 +61,11 @@
 
 	p {
 		margin: 0 0 _size(element-margin) 0;
+
+		&:after {
+			color: rgba(200,200,200,.8);
+			mix-blend-mode: exclusion;
+		}
 	}
 
 	h1, h2, h3, h4, h5, h6 {

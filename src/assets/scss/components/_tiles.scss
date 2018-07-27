@@ -11,6 +11,10 @@
 		@include vendor('flex-wrap', 'wrap');
 		border-top: 0 !important;
 
+		&:after {
+			mix-blend-mode: difference;
+		}
+
 		& + * {
 			border-top: 0 !important;
 		}
@@ -24,17 +28,20 @@
 				'filter 1s ease',
 				'-webkit-filter 1s ease'
 			));
-			@include padding(4em, 4em);
+			padding: 8%;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
 			cursor: default;
 			height: 40vh;
+			flex-flow: column;
 			max-height: 40em;
 			min-height: 23em;
 			overflow: hidden;
 			position: relative;
 			width: 40%;
+
+			
 
 			.image {
 				display: none;
@@ -146,7 +153,7 @@
 
 		@include breakpoint(large) {
 			article {
-				@include padding(4em, 3em);
+				padding: 8%;
 				height: 30vh;
 				max-height: 30em;
 				min-height: 20em;
@@ -161,7 +168,7 @@
 
 		@include breakpoint(small) {
 			article {
-				@include padding(3em, 1.5em);
+				padding: 8%;
 				height: 16em;
 				max-height: none;
 				min-height: 0;

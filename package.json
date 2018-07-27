@@ -12,6 +12,7 @@
     "gatsby-image": "^1.0.42",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-google-analytics": "^1.0.24",
+    "gatsby-plugin-nprogress": "^1.0.14",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.23",
     "gatsby-plugin-sharp": "^1.6.41",
@@ -21,6 +22,7 @@
     "gatsby-transformer-remark": "^1.7.37",
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.4",
+    "react-spinkit": "^3.0.0",
     "serve": "^9.3.0"
   },
   "keywords": [

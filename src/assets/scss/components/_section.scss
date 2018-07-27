@@ -14,15 +14,19 @@
 
 	header {
 		&.major {
-			width: -moz-max-content;
-			width: -webkit-max-content;
-			width: -ms-max-content;
-			width: max-content;
+			display: flex;
+			flex-flow: column;
+			align-self: center;
+			vertical-align: middle;
+			text-align: center;
+			padding:0 1em 1em 1em;
+			box-sizing: border-box;
+			background: rgba(0,0,0,0.4);
 			margin-bottom: _size(element-margin);
+
 
 			> :first-child {
 				margin-bottom: 0;
-				width: calc(100% + 0.5em);
 
 				&:after {
 					content: '';

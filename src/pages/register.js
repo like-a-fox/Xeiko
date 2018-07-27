@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet'
+import Banner from '../components/Banner'
 
 import { auth, db } from '../firebase';
 
@@ -42,7 +43,7 @@ class Register extends Component {
         db.doCreateUser(authUser.user.uid, username, email)
           .then(() => {
             this.setState(() => ({ ...INITIAL_STATE }));
-            history.push(routes.HOME);
+            history.push('/login');
           })
           .catch(error => {
             this.setState(updateByPropertyName('error', error));
@@ -72,14 +73,19 @@ class Register extends Component {
       email === '';
 
     return (
-<div>
+<div className="register-is-visible">
       <Helmet>
       <title>Finally Registering?</title>
       <meta name="description" content="What An Idiot!" />
   </Helmet>
-
-  <div id="main">
+  <Banner />
+  <div id="filter"></div>
+  <div id="main" className="register-parent">
+  <section id="register">
+  
   <div className="inner">
+
+    <div className="register-title">Idiot Says What?</div>
       <form onSubmit={this.onSubmit}>
         <input
           value={username}
@@ -105,13 +111,17 @@ class Register extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
+        <input disabled={isInvalid} type="submit" />
+          
 
         { error && <p>{error.message}</p> }
       </form>
+      <ul className="links">
+        <li><Link to="/">Back Home?</Link></li>
+        <li><Link to="/login">Login.. Hurry!</Link></li>
+        </ul>
       </div>
+      </section>
       </div>
       </div>
     );

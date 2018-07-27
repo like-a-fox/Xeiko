@@ -13,15 +13,13 @@ class Template extends React.Component {
         super(props)
         this.state = {
             isMenuVisible: false,
-            loading: 'is-loading'
+            loading: true
         }
         this.handleToggleMenu = this.handleToggleMenu.bind(this)
     }
 
     componentDidMount () {
-        this.timeoutId = setTimeout(() => {
-            this.setState({loading: ''});
-        }, 100);
+        setTimeout(() => this.setState({ loading: false }), 100);
     }
 
     componentWillUnmount () {
@@ -40,7 +38,9 @@ class Template extends React.Component {
         const { children } = this.props
 
         return (
+            
             <div className={`body ${this.state.loading} ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
+            
                 <Helmet>
                     <link rel="stylesheet" href={withPrefix('skel.css')} />
                 </Helmet>
