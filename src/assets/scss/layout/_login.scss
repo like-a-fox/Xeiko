@@ -1,0 +1,180 @@
+#login {
+    @include vendor('transition', (
+        'transform #{_duration(menu)} ease',
+        'opacity #{_duration(menu)} ease',
+        'visibility #{_duration(menu)}'
+    ));
+    @include vendor('align-items', 'center');
+    @include vendor('display', 'flex');
+    @include vendor('justify-content', 'center');
+    @include vendor('pointer-events', 'none');
+    background: transparentize(_palette(fg), 0.1);
+    box-shadow: none;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 3em 2em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: _misc(z-index-base);
+
+
+
+    .inner.login-block {
+        @include vendor('transition', (
+            'transform #{_duration(menu)} ease-out',
+            'opacity #{_duration(menu)} ease',
+            'visibility #{_duration(menu)}'
+        ));
+        @include vendor('transform', 'rotateX(20deg)');
+        @include vendor('filter', 'none');
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        width: 21em!important;
+        background: _palette(border);
+        max-height: 100vh;
+        opacity: 0;
+        overflow: auto;
+        text-align: center;
+        width: 18em;
+        padding-top: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: .001em;
+
+        .login-title {
+            width: 100%;
+            background: _palette(fg-bold);
+            color: _palette(border-bg);
+            line-height: 3em;
+            margin-bottom: 4em;
+            text-transform: uppercase;
+            font-weight: 600;
+            box-shadow: inset 0 0 0 2px _palette(border-bg);
+        }
+        input {
+            width: 100%;
+            opacity: 1;
+            color: _pallet(border-bg)!important;
+            margin-bottom: .5em;
+        }
+
+    
+        ul {
+			margin: 3em 0 (_size(element-margin) * 0.5) 0;
+
+			&.links {
+				list-style: none;
+				padding: 0;
+
+				> li {
+					padding: 0;
+
+					> a:not(.button) {
+						border: 0;
+						box-shadow: inset 0 0 0 2px _palette(border-bg);
+						display: block;
+						font-size: 0.8em;
+						font-weight: _font(weight-bold);
+						letter-spacing: _font(letter-spacing-alt);
+                        line-height: 3.25em;
+                        margin-top: .5em;
+                        text-decoration: none;
+                        color: _palette(border-bg);
+                        background: _palette(fg-bold);
+						text-transform: uppercase;
+					}
+
+					> .button {
+						display: block;
+						margin: 0.5em 0 0 0;
+					}
+
+					&:first-child {
+						> a:not(.button) {
+							border-top: 0 !important;
+						}
+					}
+				}
+			}
+		}
+    }
+    
+
+
+    .close {
+        @include vendor('transition', 'color #{_duration(transition)} ease-in-out');
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        border: 0;
+        cursor: pointer;
+        display: block;
+        height: 4em;
+        line-height: 4em;
+        overflow: hidden;
+        padding-right: 1.25em;
+        position: absolute;
+        right: 0;
+        text-align: right;
+        text-indent: 8em;
+        top: 0;
+        white-space: nowrap;
+        width: 8em;
+
+        &:before, &:after {
+            @include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+            background-position: center;
+            background-repeat: no-repeat;
+            content: '';
+            display: block;
+            height: 4em;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 4em;
+        }
+
+        &:before {
+            background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(fg-bold)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
+        }
+
+        &:after {
+            background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(highlight)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
+            opacity: 0;
+        }
+
+        &:hover, &:active {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+body.is-ie {
+    #menu {
+        background: transparentize(_palette(bg-alt), 0.025);
+    }
+}
+.login-is-visible {
+    #wrapper {
+        @include vendor('filter', 'blur(0.5em)');
+    }
+
+    #login {
+        @include vendor('pointer-events', 'auto');
+        opacity: 1;
+        visibility: visible;
+
+        .inner {
+            @include vendor('transform', 'none');
+            opacity: 1;
+            visibility: visible;
+
+            form {
+                @include vendor('transform', 'none');
+            }
+        }
+    }
+}
