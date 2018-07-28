@@ -104,12 +104,12 @@
 			}
 		}
 
-		&.style1 { &:after { background-color: rgba(0,0,0,.3) ; } }
-		&.style2 { &:after { background-color: rgba(0,0,0,.3); } }
-		&.style3 { &:after { background-color: rgba(0,0,0,.3); } }
-		&.style4 { &:after { background-color: rgba(0,0,0,.3); } }
-		&.style5 { &:after { background-color: rgba(0,0,0,.3); } }
-		&.style6 { &:after { background-color: rgba(0,0,0,.3); } }
+		&.style1 { &:after { background-color: rgba(0,0,0,.2) ; } }
+		&.style2 { &:after { background-color: rgba(0,0,0,.2); } }
+		&.style3 { &:after { background-color: rgba(0,0,0,.2); } }
+		&.style4 { &:after { background-color: rgba(0,0,0,.2); } }
+		&.style5 { &:after { background-color: rgba(0,0,0,.2); } }
+		&.style6 { &:after { background-color: rgba(0,0,0,.2); } }
 
 		.body.is-loading & {
 			&:after {

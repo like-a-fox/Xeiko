@@ -79,7 +79,7 @@
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
-		background: _palette(border-bg);
+		background: rgba(61, 71, 88, 0.6);
 		border: none;
 		border-radius: 0;
 		color: inherit;
