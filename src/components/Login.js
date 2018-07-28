@@ -70,7 +70,7 @@ class Login extends Component {
             { event => this.setState(updateByPropertyName('password', event.target.value)) }
             type="password"
             placeholder="Password"/>
-          <input disabled={isInvalid} className="special fit button" type="submit"/> {error && <p>
+          <input disabled={isInvalid} className="fit button" type="submit"/> {error && <p>
             {error.message
 }
           </p>}
@@ -83,7 +83,7 @@ class Login extends Component {
             
           </li>
           <li>
-            <a href="javascript:;" className="special fit button" onClick={props.onToggleLogin}>
+            <a href="javascript:;" className="fit button" onClick={props.onToggleLogin}>
           Or Go Home
         </a>
         </li>

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Login from './Login'
 import Register from './Register'
+import { firebase } from '../firebase'
 
 
 
@@ -17,6 +18,11 @@ class Menu extends React.Component {
 
     } 
     componentDidMount () {
+      firebase.auth.onAuthStateChanged(authUser => {
+        authUser
+          ? this.setState(() => ({ authUser }))
+          : this.setState(() => ({ authUser: null }));
+      });
         setTimeout(() => this.setState({loading: false}), 300)
     }
 
@@ -24,6 +30,7 @@ class Menu extends React.Component {
 
   render() {
       const props = this.props
+      const isAuth = !this.authUser
       
     return(
       <nav id="menu">

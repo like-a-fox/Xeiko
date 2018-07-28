@@ -132,7 +132,7 @@
 		&:disabled {
 			@include vendor('pointer-events', 'none');
 			cursor: default;
-			filter: invert(100%) grayscale(100%);
+			filter: invert(70%) grayscale(100%);
 			opacity: 1;
 		}
 	}

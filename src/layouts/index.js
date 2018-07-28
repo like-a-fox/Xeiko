@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 import { Link, withPrefix } from 'gatsby-link'
 import '../assets/scss/main.scss'
 import Header from '../components/Header'
@@ -94,7 +95,16 @@ class Template extends React.Component {
 
 
 Template.propTypes = {
-    children: React.PropTypes.func
+    children: PropTypes.func,
+    componentDidMount: PropTypes.func,
+    componentWillUnmount: PropTypes.func,
+    handleToggleMenu: PropTypes.func,
+    handleViewLogin: PropTypes.func,
+    handleViewRegister: PropTypes.func,
+    loading: PropTypes.string,
+    isMenuVisible: PropTypes.bool,
+    isLoginVisible:PropTypes.bool,
+    isRegisterVisible: PropTypes.bool
 }
 
 export default Template

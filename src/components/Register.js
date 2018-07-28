@@ -89,14 +89,14 @@ class Register extends Component {
             onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
             type="password"
             placeholder="Confirm Password"/>
-          <input disabled={isInvalid} type="submit" className="special fit button"/> {error && <p>{error.message}</p>}
+          <input disabled={isInvalid} type="submit" className="fit button"/> {error && <p>{error.message}</p>}
         </form>
         <ul className="links">
           <li>
             <a href="javascript:;" className=" special fit button" onClick={props.onToggleLogin}>Login.. Hurry!</a>
           </li>
           <li>
-            <a href="javascript:;" onClick={props.onToggleRegister} className=" special fit button">
+            <a href="javascript:;" onClick={props.onToggleRegister} className="fit button">
           Or Go Home
         </a>
         </li>
