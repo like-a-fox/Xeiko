@@ -2,9 +2,6 @@ import React, {Component} from 'react'
 import {auth} from '../firebase'
 import createHistory from "history/createBrowserHistory"
 
-
-
-
 const updateByPropertyName = (propertyName, value) => () => ({[propertyName]: value});
 
 const INITIAL_STATE = {
@@ -19,7 +16,7 @@ class Login extends Component {
 
     this.state = {
       ...INITIAL_STATE
-      
+
     };
   }
 
@@ -32,7 +29,7 @@ class Login extends Component {
         this.setState(() => ({
           ...INITIAL_STATE
         }));
-       
+
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error));
@@ -47,48 +44,26 @@ class Login extends Component {
     const isInvalid = password === '' || email === '';
     const props = this.props
     return (
-      <div className="login">
-        
-          
-            <div href="jdivvascript:;" onClick={props.onToggleMenu} className=" login-title">
-          Whats The Password?
-        </div>
-        
-        
-        
-
         <form className="login-form" onSubmit={this.onSubmit}>
+        <label>></label>
           <input
             value={email}
             onChange=
             { event => this.setState(updateByPropertyName('email', event.target.value)) }
             type="text"
-            placeholder="Email Address"/>
+            placeholder="user_Email_Address"/>
+            <label>></label>
           <input
             value={password}
             onChange=
             { event => this.setState(updateByPropertyName('password', event.target.value)) }
             type="password"
-            placeholder="Password"/>
-          <input disabled={isInvalid} className="fit button" type="submit"/> {error && <p>
+            placeholder="user_Passwd"/>
+          <input disabled={isInvalid} className="fit special button" value="$login_submit" type="submit"/> {error && <p>
             {error.message
 }
           </p>}
         </form>
-        <ul className="links">
-        <li>
-            <a href="javascript:;" className="special fit button" onClick={props.onToggleRegister}>
-              Sign Up Idiot
-            </a>
-            
-          </li>
-          <li>
-            <a href="javascript:;" className="fit button" onClick={props.onToggleLogin}>
-          Or Go Home
-        </a>
-        </li>
-        </ul>
-      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "xeiko-fox",
   "description": "Xeiko - Like A Fox Design",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Derek Musser",
   "dependencies": {
     "@firebase/app-types": "^0.3.2",
@@ -33,6 +33,7 @@
   "main": "n/a",
   "scripts": {
     "start": "serve public/",
+    "now": "now --public",
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",

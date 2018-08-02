@@ -10,6 +10,7 @@ const Header = (props) =>(
                 <nav>
                     <a className="menu-link" onClick={props.handleToggleMenu} href="javascript:;">Menu</a>
                 </nav>
+        
             </header>
         )
  

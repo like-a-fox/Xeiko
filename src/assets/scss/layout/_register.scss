@@ -1,64 +1,41 @@
-.register {
-    @include vendor('transition', ( 'transform #{_duration(menu)} ease', 'opacity #{_duration(menu)} ease', 'visibility #{_duration(menu)}'));
-    @include vendor('align-items', 'center');
-    @include vendor('display', 'flex');
-    @include vendor('justify-content', 'center');
-    @include vendor('pointer-events', 'none');
-    -webkit-overflow-scrolling: touch;
-    box-shadow: none;
-    width: 288px;
-    max-width: 100%;
-    opacity: 0;
-    position: fixed;
-    overflow: hidden;
-    flex-flow: column;
-    padding: 0;
-    visibility: hidden;
-    text-align: center;
-    > :first-child {
-        margin-top: _size(element-margin);
-    }
-    > :last-child {
-        margin-bottom: (_size(element-margin) * 1.5);
-    }
-    .register-title {
-        line-height: 42px;
-        height: 42px;
-        text-transform: uppercase;
-        font-size: 0.8em;
-        font-weight: _font(weight-bold);
-        letter-spacing: _font(letter-spacing-alt);
-        margin-bottom: 1.25em;
-        color: rgb(175, 216, 228);
-        border-bottom: 2px solid rgba(175, 216, 228, 0.647);
-        width: 100%;
-    }
+
     .register-form {
         width: 100%;
+        display: none;
+        background: rgba(0, 0, 0, .1);
+        box-sizing: border-box;
+        padding: .5em;
         margin-bottom: 0 !important;
+        label {
+            position: absolute;
+            height: 52px;
+            line-height: 52px;
+            color: rgb(175, 216, 228);
+            padding: 0 1em;
+        }
         input {
             width: 100%;
             opacity: 1;
-            margin-bottom: .5em;
-            line-height: 42px;
-            height: 42px;
-            text-transform: uppercase;
+            line-height: 52px;
+            height: 52px;
+            text-transform: lowercase;
             &[type="text"],
             &[type="password"],
             &[type="email"] {
                 text-decoration-color: _palette(accent4);
                 background-color: rgba(158, 141, 164, 0.297) !important;
-                text-align: center;
-                font-size: 0.8em;
+                text-align: left;
+                margin-bottom: .5em;
+                font-size: 16px;
                 font-weight: _font(weight-bold);
                 letter-spacing: _font(letter-spacing-alt);
-                border-bottom: solid 2px rgba(175, 216, 228, 0.647);
                 &::-webkit-input-placeholder {
-                    color: rgb(175, 216, 228) !important;
-                    opacity: 1;
+                    color: #7e9396 !important;
+                    opacity: .75;
                 }
             }
             &[type="submit"] {
+                margin-bottom: 0!important;
                 &:active,
                 &:hover {
                     color: _palette(accent4);
@@ -71,35 +48,38 @@
         }
     }
     ul {
-        margin: 2em 0 0 0 !important;
-        width: 100%;
-        ;
+
+
         &.links {
             list-style: none;
             padding: 0;
             >li {
                 padding: 0;
                 width: 100%;
+                a.title {
+                    background: rgba(175, 216, 228, 0.9);
+                    color: rgba(124, 106, 131, 0.913) !important;
+                }
                 a.disabled {
                     color: rgba(0, 0, 0, 1);
-                    font-size: 1em !important;
+                    font-size: 16px !important;
                 }
                 >a:not(.button) {
                     border: 0;
                     border-top: solid 1px _palette(border);
                     display: block;
-                    font-size: 0.8em;
+                    font-size: 16px;
                     font-weight: _font(weight-bold);
                     letter-spacing: _font(letter-spacing-alt);
-                    line-height: 42px;
+                    line-height: 64px;
                     text-decoration: none;
-                    text-transform: uppercase;
+                    text-transform: lowercase;
                 }
                 >.button {
                     display: block;
                     margin: 0.5em 0 0 0;
-                    line-height: 42px;
-                    height: 42px;
+                    line-height: 52px;
+                    height: 52px;
                 }
                 &:first-child {
                     >a:not(.button) {
@@ -109,17 +89,16 @@
             }
         }
     }
-}
 
 .body.is-menu-visible.is-register-visible #menu {
-    .inner {
-        opacity: 0;
-        visibility: hidden;
-    }
-    .register {
-        @include vendor('pointer-events', 'auto');
-        @include vendor('transform', 'none');
-        opacity: 1;
-        visibility: visible;
-    }
+
+        .register-title {
+            background: rgba(175, 216, 228, 0.9);
+            color: rgba(124, 106, 131, 0.913) !important;
+        }
+
+        .register-form {
+            display: block;
+        }
+    
 }

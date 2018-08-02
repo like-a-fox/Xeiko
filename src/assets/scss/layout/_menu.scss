@@ -11,7 +11,7 @@
     @include vendor('display', 'flex');
     @include vendor('justify-content', 'center');
     @include vendor('pointer-events', 'none');
-    background: transparentize(#614040, 0.6);
+    background: transparentize(rgb(23, 25, 32), 0.3);
     box-shadow: none;
     height: 100%;
     left: 0;
@@ -52,12 +52,12 @@
                     border: 0;
                     border-top: solid 1px _palette(border);
                     display: block;
-                    font-size: 0.8em;
+                    font-size: 16px;
                     font-weight: _font(weight-bold);
                     letter-spacing: _font(letter-spacing-alt);
                     line-height: 4em;
                     text-decoration: none;
-                    text-transform: uppercase;
+                    text-transform: lowercase;
                 }
                 >.button {
                     display: block;
@@ -126,7 +126,7 @@ body.is-ie {
 .body.is-menu-visible {
     #wrapper {
         @include vendor('filter',
-        'blur(0.7em)');
+        'blur(0.9em)');
     }
     #menu {
         @include vendor('pointer-events',

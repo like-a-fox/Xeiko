@@ -37,13 +37,13 @@ class Menu extends React.Component {
         <div className="inner">
           <ul className="links">
             <li>
-              <Link onClick={props.onToggleMenu} to="/">Home</Link>
+              <Link onClick={props.onToggleMenu} to="/">$home</Link>
             </li>
             <li>
-              <Link onClick={props.onToggleMenu} to="/landing">Landing</Link>
+              <Link onClick={props.onToggleMenu} to="/landing">$kernel panic</Link>
             </li>
             <li>
-              <Link onClick={props.onToggleMenu} to="/generic">Generic</Link>
+              <Link onClick={props.onToggleMenu} to="/generic">$fatal error</Link>
             </li>
 {/*             <li>
               <Link onClick={props.onToggleMenu} to="/profile">Profile</Link>
@@ -54,16 +54,18 @@ class Menu extends React.Component {
               <a
                 onClick={props.handleViewRegister}
                 href="javascript:;"
-                className="button fit special">Register</a>
+                className="button fit special register-title">$register_user</a>
             </li>
+            <Register onToggleLogin={props.onToggleLogin} onToggleRegister={props.onToggleRegister} onToggleMenu={props.onToggleMenu} registerState={props.registerState} loginState={props.loginState} />
             <li>
-              <a onClick={props.handleViewLogin} href="javascript:;" className="button fit">Log In</a>
+              <a onClick={props.handleViewLogin} href="javascript:;" className="button fit login-title">$login_user</a>
             </li>
+            <Login onToggleMenu={props.onToggleMenu} onToggleRegister={props.handleViewRegister} onToggleLogin={props.onToggleLogin} />
           </ul>
         </div>
         <a className="close" onClick={props.onToggleMenu} href="javascript:;">Close</a>
-       <Login onToggleMenu={props.onToggleMenu} onToggleRegister={props.handleViewRegister} onToggleLogin={props.onToggleLogin} />
-       <Register onToggleLogin={props.onToggleLogin} onToggleRegister={props.onToggleRegister} onToggleMenu={props.onToggleMenu} registerState={props.registerState} loginState={props.loginState} />
+       
+       
       </nav>
     )
   }

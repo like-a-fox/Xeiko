@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {auth, db} from '../firebase';
 import { doSignInWithEmailAndPassword } from '../firebase/auth';
-import createHistory from "history/createBrowserHistory"
 
 
 
@@ -62,46 +61,36 @@ class Register extends Component {
     const isInvalid = passwordOne !== passwordTwo || passwordOne === '' || username === '' || email === '';
     const props = this.props
     return (
-      <div className="register">
-         
-            <div href="javascript:;" onClick={props.onToggleMenu} className=" register-title">
-          Be Part Of The Club?
-        </div>
+      
         
         <form className="register-form" onSubmit={this.onSubmit}>
+        <label>></label>
           <input
             value={username}
             onChange={event => this.setState(updateByPropertyName('username', event.target.value))}
             type="text"
-            placeholder="Full Name"/>
+            placeholder="user_name"/>
+            <label>></label>
           <input
             value={email}
             onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
             type="text"
-            placeholder="Email Address"/>
+            placeholder="user_email_address"/>
+            <label>></label>
           <input
             value={passwordOne}
             onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
             type="password"
-            placeholder="Password"/>
+            placeholder="user_passwd"/>
+            <label>></label>
           <input
             value={passwordTwo}
             onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
             type="password"
-            placeholder="Confirm Password"/>
-          <input disabled={isInvalid} type="submit" className="fit button"/> {error && <p>{error.message}</p>}
+            placeholder="confirm_user_passwd"/>
+          <input disabled={isInvalid} type="submit" value="$register_submit" className="fit button"/> {error && <p>{error.message}</p>}
         </form>
-        <ul className="links">
-          <li>
-            <a href="javascript:;" className=" special fit button" onClick={props.onToggleLogin}>Login.. Hurry!</a>
-          </li>
-          <li>
-            <a href="javascript:;" onClick={props.onToggleRegister} className="fit button">
-          Or Go Home
-        </a>
-        </li>
-        </ul>
-      </div>
+       
     );
   }
 }
