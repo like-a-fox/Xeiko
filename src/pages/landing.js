@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import BannerLanding from '../components/BannerLanding'
 
 import pic08 from '../assets/images/pic08.jpg'
-import pic09 from '../assets/images/pic09.jpg'
+import pic09 from '../assets/images/picsq4.jpg'
 import pic10 from '../assets/images/picsq2.jpg'
 
 const Landing = (props) => (

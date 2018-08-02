@@ -2,38 +2,42 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Login from './Login'
 import Register from './Register'
-import { firebase } from '../firebase'
+import AuthUserContext from '../components/Session/AuthUserContext'
+import {auth} from '../firebase'
 
+const MenuNoAuth = (props) =>
+<nav id="menu">
+<div className="inner">
+  <ul className="links">
+    <li>
+      <Link onClick={props.onToggleMenu} to="/">$home</Link>
+    </li>
+    <li>
+      <Link onClick={props.onToggleMenu} to="/landing">$kernel panic</Link>
+    </li>
+    <li>
+      <Link onClick={props.onToggleMenu} to="/generic">$fatal error</Link>
+    </li>
+  </ul>
+  <ul className="actions vertical">
+    <li>
+      <a
+        onClick={props.handleToggleRegister}
+        href="javascript:;"
+        className="button fit special register-title">$register_user</a>
+    </li>
+    <Register />
+    <li>
+      <a onClick={props.handleToggleLogin} href="javascript:;" className="button fit login-title">$login_user</a>
+    </li>
+    <Login />
+  </ul>
+</div>
+<a className="close" onClick={props.onToggleMenu} href="javascript:;">Close</a>
+</nav>
 
-
-class Menu extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-          isMenuVisible: false,
-            isLoginVisible:false,
-            isRegisterVisible: false
-        }
-       
-
-    } 
-    componentDidMount () {
-      firebase.auth.onAuthStateChanged(authUser => {
-        authUser
-          ? this.setState(() => ({ authUser }))
-          : this.setState(() => ({ authUser: null }));
-      });
-        setTimeout(() => this.setState({loading: false}), 300)
-    }
-
-    
-
-  render() {
-      const props = this.props
-      const isAuth = !this.authUser
-      
-    return(
-      <nav id="menu">
+const MenuAuth = (props) =>
+<nav id="menu">
         <div className="inner">
           <ul className="links">
             <li>
@@ -45,40 +49,35 @@ class Menu extends React.Component {
             <li>
               <Link onClick={props.onToggleMenu} to="/generic">$fatal error</Link>
             </li>
-{/*             <li>
-              <Link onClick={props.onToggleMenu} to="/profile">Profile</Link>
-            </li> */}
+            <li>
+              <Link onClick={props.onToggleMenu} to="/profile">$master --slave</Link>
+            </li>
           </ul>
           <ul className="actions vertical">
             <li>
               <a
-                onClick={props.handleViewRegister}
+                onClick={auth.doSignOut}
                 href="javascript:;"
-                className="button fit special register-title">$register_user</a>
+                className="button fit login-title">$session_logout</a>
             </li>
-            <Register onToggleLogin={props.onToggleLogin} onToggleRegister={props.onToggleRegister} onToggleMenu={props.onToggleMenu} registerState={props.registerState} loginState={props.loginState} />
-            <li>
-              <a onClick={props.handleViewLogin} href="javascript:;" className="button fit login-title">$login_user</a>
-            </li>
-            <Login onToggleMenu={props.onToggleMenu} onToggleRegister={props.handleViewRegister} onToggleLogin={props.onToggleLogin} />
           </ul>
         </div>
         <a className="close" onClick={props.onToggleMenu} href="javascript:;">Close</a>
-       
-       
+
       </nav>
-    )
+
+const Menu = (props) => 
+<AuthUserContext.Consumer>
+  {authUser => authUser
+    ? <MenuAuth 
+      onToggleMenu={props.onToggleMenu} />
+    : <MenuNoAuth 
+      onToggleMenu={props.onToggleMenu} 
+      handleToggleRegister={props.handleToggleRegister} 
+      handleToggleLogin={props.handleToggleLogin} />
   }
-}
+</AuthUserContext.Consumer>
 
 
-
-
-
-Menu.propTypes = {
-  onToggleMenu: React.PropTypes.func,
-  handleViewLogin: React.PropTypes.func,
-  handleViewRegister: React.PropTypes.func
-}
 
 export default Menu

@@ -7,6 +7,8 @@ import Header from '../components/Header'
 import Menu from '../components/Menu'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import withAuthentication from '../components/Session/withAuthentication'
+
 
 
 class Template extends React.Component {
@@ -77,13 +79,15 @@ class Template extends React.Component {
                     <link rel="stylesheet" href={withPrefix('skel.css')} />
                 </Helmet>
                 <div id="wrapper">
-                    <Header handleToggleMenu={this.handleToggleMenu} handleToggleLogin={this.handleViewLogin} />
+                    <Header handleToggleMenu={this.handleToggleMenu} />
                     {children()}
                     <Contact />
                     <Footer />
                 </div>
-                <Menu onToggleMenu={this.handleToggleMenu} loginState={this.state.isLoginVisible} registerState={this.state.isRegisterVisible} handleViewLogin={this.handleViewLogin} handleViewRegister={this.handleViewRegister} onToggleLogin={this.handleViewLogin}
-                onToggleRegister={this.handleViewRegister} />
+                <Menu 
+                handleToggleLogin={this.handleViewLogin} 
+                handleToggleRegister={this.handleViewregister}
+                onToggleMenu={this.handleToggleMenu} />
                    
                
             </div>
@@ -109,4 +113,4 @@ Template.propTypes = {
     isRegisterVisible: PropTypes.bool
 }
 
-export default Template
+export default withAuthentication(Template) 
