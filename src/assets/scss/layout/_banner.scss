@@ -40,6 +40,8 @@
 			z-index: 1;
 		}
 
+		
+
 		h1 {
 			font-size: 52px;
 		}
@@ -54,6 +56,24 @@
 			padding: 0 !important;
 			position: relative;
 			z-index: 2;
+
+			.user-img {
+				height: 30vh;
+				width: auto;
+				position: absolute;
+				right:34.5%;
+	
+				img {
+					height: 100%;
+					border: solid 3px _palette(border-bg);
+					border-radius: 50%;
+					@include vendor('filter', 'grayscale(40%)');
+
+					&:hover {
+						@include vendor('filter', 'invert(100%)');
+					}
+				}
+			}
 
 			.image {
 				display: none;

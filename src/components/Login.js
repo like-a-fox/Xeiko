@@ -29,8 +29,7 @@ class Login extends Component {
         this.setState(() => ({
           ...INITIAL_STATE
         }))
-        history.push('/profile')
-
+        history.push('/')
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error));

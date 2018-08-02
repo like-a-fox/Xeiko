@@ -33,16 +33,15 @@
 			
 		}
 
-		a:hover strong {
-			background-color: _palette(highlight);
+		a strong {
 			color: rgb(80, 80, 80);
+			font-size: 16px;
+			padding: .4em;
 		}
 
-		a strong {
-			color: inherit;
-			background-color: rgb(80, 80, 80);
-			letter-spacing: 0.05em;
-			padding: .4em;
+		a:hover strong {
+			color: _palette(highlight);
+			
 			
 		}
 

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {auth, db} from '../firebase';
 import {doSignInWithEmailAndPassword} from '../firebase/auth';
+import { fstore } from '../firebase';
+import { refUser } from '../firebase/fstore';
 
 const updateByPropertyName = (propertyName, value) => () => ({[propertyName]: value})
 
@@ -36,6 +38,9 @@ class Register extends Component {
             doSignInWithEmailAndPassword(email, passwordOne)
           })
           .then(() => {
+            refUser(authUser.user.uid)
+          })
+          .then(() => {
             this.setState(() => ({
               ...INITIAL_STATE
             }))
@@ -51,6 +56,7 @@ class Register extends Component {
       })
       event.preventDefault()
   }
+
 
   render() {
     const {username, email, passwordOne, passwordTwo, error} = this.state
