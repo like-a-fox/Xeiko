@@ -45,13 +45,15 @@ class Template extends React.Component {
     handleViewLogin()  {
         this.setState({
             isLoginVisible: !this.state.isLoginVisible,
-            isRegisterVisible: false
+            isRegisterVisible: false,
+            isMenuVisible: true
         })
     }
     handleViewRegister() {
         this.setState({
             isRegisterVisible: !this.state.isRegisterVisible,
-            isLoginVisible: false
+            isLoginVisible: false,
+            isMenuVisible: true
         })
     }
 
@@ -75,7 +77,7 @@ class Template extends React.Component {
                     <link rel="stylesheet" href={withPrefix('skel.css')} />
                 </Helmet>
                 <div id="wrapper">
-                    <Header handleToggleMenu={this.handleToggleMenu}  />
+                    <Header handleToggleMenu={this.handleToggleMenu} handleToggleLogin={this.handleViewLogin} />
                     {children()}
                     <Contact />
                     <Footer />
