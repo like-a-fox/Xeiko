@@ -86,7 +86,7 @@ class Template extends React.Component {
                 </div>
                 <Menu 
                 handleToggleLogin={this.handleViewLogin} 
-                handleToggleRegister={this.handleViewregister}
+                handleToggleRegister={this.handleViewRegister}
                 onToggleMenu={this.handleToggleMenu} />
                    
                

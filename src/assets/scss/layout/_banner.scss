@@ -59,12 +59,15 @@
 
 			.user-img {
 				height: 30vh;
-				width: auto;
+				width: 100%;
 				position: absolute;
-				right:34.5%;
+				display: flex;
+				flex-flow: row;
+				justify-content: center;
 	
 				img {
 					height: 100%;
+					width: auto;
 					border: solid 3px _palette(border-bg);
 					border-radius: 50%;
 					@include vendor('filter', 'grayscale(40%)');
