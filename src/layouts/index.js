@@ -77,6 +77,8 @@ class Template extends React.Component {
             
                 <Helmet>
                     <link rel="stylesheet" href={withPrefix('skel.css')} />
+                    <link rel="icon" type="image/x-icon" href={withPrefix('favicon.ico')} />
+                    <link rel="favicon-touch-icon" sizes="180x180" href={withPrefix('favicon-touch-icon.png')} />
                 </Helmet>
                 <div id="wrapper">
                     <Header handleToggleMenu={this.handleToggleMenu} />
