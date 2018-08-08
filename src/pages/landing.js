@@ -3,14 +3,14 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import BannerLanding from '../components/BannerLanding'
 
-import pic08 from '../assets/images/pic08.jpg'
-import pic09 from '../assets/images/picsq4.jpg'
-import pic10 from '../assets/images/picsq2.jpg'
+import pic08 from '../assets/images/newPhotos/newTwelveSQ.jpg'
+import pic09 from '../assets/images/newPhotos/newOneSQ.jpg'
+import pic10 from '../assets/images/newPhotos/newElevenSQ.jpg'
 
 const Landing = (props) => (
     <div>
         <Helmet>
-            <title>The Shadow Void</title>
+            <title>$kernel panic</title>
             <meta name="description" content="The Shadow Void" />
         </Helmet>
 

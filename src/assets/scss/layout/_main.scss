@@ -21,6 +21,7 @@
 
 		&.alt {
 			background-color: transparent;
+			filter: invert(100%);
 			border-bottom: solid 1px _palette(border);
 		}
 	}

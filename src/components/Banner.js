@@ -10,7 +10,7 @@ const Banner = (props) => (
                 <p>By the power of truth, I, while living,<br />
                 while living, have conquered the universe</p>
                 <ul className="actions">
-                    <li><a href="#one" className="button next scrolly">See It?</a></li>
+                    <li><a href="#one" className="darkback button next scrolly">See It?</a></li>
                 </ul>
             </div>
         </div>

@@ -7,7 +7,7 @@ import pic10 from '../assets/images/pic10.jpg'
 const Generic = (props) => (
     <div>
         <Helmet>
-            <title>Hollow & Empty</title>
+            <title>$fatal error</title>
             <meta name="description" content="Hollow & Empty" />
         </Helmet>
 
